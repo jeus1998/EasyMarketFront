@@ -10,6 +10,7 @@
 <span id="backend-url" th:attr="data-url=${backendUrl}"></span>
 </body>
 <script>
+    console.log(window.origin);
     var backendUrl = document.getElementById("backend-url").dataset.url;
     document.getElementById("testApiButton").addEventListener("click", function() {
         fetch(backendUrl + "/api/test")
