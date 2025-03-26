@@ -69,7 +69,7 @@ jobs:
             
             # 확인: lsof로 80 포트가 열려 있는지 확인
             echo "Checking for open ports on 80:"
-            lsof -i:80
+            lsof -i:80 || echo "No process is using port 80"
             
             # 폴더 삭제 
             rm -rf /home/ubuntu/front-server/tobe
