@@ -64,8 +64,8 @@ jobs:
             # 종료 대기 (2초)
             sleep 2
             
-            # 애플리케이션 실행 output.log 로그 기록 
-            nohup java -jar front.jar > ./output.log 2>&1 &
+            # 애플리케이션 실행 output.log 로그 기록 80 포트는 sudo 필요 
+            sudo nohup java -jar front.jar > ./output.log 2>&1 &
             
             # 폴더 삭제 
             rm -rf /home/ubuntu/front-server/tobe
