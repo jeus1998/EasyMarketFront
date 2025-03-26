@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -67,6 +66,10 @@ jobs:
             
             # 애플리케이션 실행 output.log 로그 기록 
             nohup java -jar front.jar > ./output.log 2>&1 &
+            
+            # 확인: lsof로 80 포트가 열려 있는지 확인
+            echo "Checking for open ports on 80:"
+            lsof -i:80
             
             # 폴더 삭제 
             rm -rf /home/ubuntu/front-server/tobe
